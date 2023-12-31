@@ -1,41 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+@extends('layouts.main')
 
-    <title>My Contact</title>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
-    <!-- Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/custom.css" rel="stylesheet">
-  </head>
-  <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
-        <a class="navbar-brand text-uppercase" href="index.html">            
-            <strong>Contact</strong> App
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-            
-        <!-- /.navbar-header -->
-        <div class="collapse navbar-collapse" id="navbar-toggler">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a href="#" class="nav-link">Companies</a></li>
-            <li class="nav-item active"><a href="#" class="nav-link">Contacts</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- content -->
-    <main class="py-5">
+@section('content')
+<main class="py-5">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -44,29 +10,12 @@
                   <div class="d-flex align-items-center">
                     <h2 class="mb-0">All Contacts</h2>
                     <div class="ml-auto">
-                      <a href="form.html" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add New</a>
+                      <a href="{{ route('cars.create')}}" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add New</a>
                     </div>
                   </div>
                 </div>
               <div class="card-body">
-                <div class="row">
-                  <div class="col-md-6"></div>
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="col">
-                        <div class="input-group mb-3">
-                          <select class="custom-select">
-                            <option value="" selected>All Companies</option>
-                            <option value="1">Company One</option>
-                            <option value="2">Company Two</option>
-                            <option value="3">Company Three</option>
-                          </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                @include('cars._filter')
                 <table class="table table-striped table-hover">
                   <thead>
                     <tr>
@@ -149,9 +98,4 @@
         </div>
       </div>
     </main>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-  </body>
-</html>
+@endsection
