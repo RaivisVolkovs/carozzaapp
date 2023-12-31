@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Contact;
+use App\Models\Car;
 
 use Illuminate\Http\Request;
 
@@ -9,7 +9,8 @@ class CarController extends Controller
 {
     public function index() 
     {
-        return view('cars.index');
+        $cars= Car::all();
+        return view('cars.index', compact('cars'));
     }
 
     public function create() {
