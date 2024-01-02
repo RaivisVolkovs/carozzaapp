@@ -14,11 +14,6 @@ use App\Http\Controllers\CarController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 
 Route::get('/cars', [CarController::class, 'index'])->name('cars.index');
 
