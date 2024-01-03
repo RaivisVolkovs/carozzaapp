@@ -25,7 +25,7 @@ class CarController extends Controller
     public function create() {
 
         $cars= new Car();
-        $manufacturers= Manufacturer::orderBy('name')->pluck('name', 'id')->prepend('All Manufacturers', '');
+        $manufacturers= Manufacturer::orderBy('name')->pluck('name', 'id')->prepend('Select Manufacturer', '');
         return view('cars.create', compact('manufacturers', 'cars'));
     }
 

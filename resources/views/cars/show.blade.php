@@ -7,7 +7,7 @@
           <div class="col-md-8">
             <div class="card">
               <div class="card-header card-title">
-                <strong>Contact Details</strong>
+                <strong>Cars Details</strong>
               </div>           
               <div class="card-body">
                 <div class="row">
