@@ -83,4 +83,10 @@ class CarController extends Controller
             $cars->delete();
             return back()->with('message', 'Contact has been deleted successfully!');
     }
+
+    public function manufacturers() {
+        $manufacturers = Manufacturer::all();
+        return view('manufacturers.index', compact('manufacturers'));
+    }
+    
 }

@@ -35,9 +35,12 @@
         <div class="form-group row">
           <label for="manufacturer_id" class="col-md-3 col-form-label">Manufacturer</label>
           <div class="col-md-9">
-            <select name="manufacturer_id" id="manufacturer_id" class="form-control">
+            <select name="manufacturer_id" id="manufacturer_id" class="form-control @error('manufacturer_id') is-invalid @enderror">
               @foreach($manufacturers as $id => $name)
                 <option {{ $id == old('manufacturer_id', $cars->manufacturer_id) ? 'selected' : ''}} value="{{ $id }}" >{{ $name }}</option>
+                @error('manufacturer_id')
+              <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
               @endforeach
             </select>
           </div>
